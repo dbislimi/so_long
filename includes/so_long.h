@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 14:55:12 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/05/25 17:03:31 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/05/28 19:13:54 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,9 @@
 # define INVALID_MAP "Error\nInvalid map\n"
 # define EMPTY_FILE "Error\nEmpty file (or not a file)\n"
 # define NOT_FOUND "Error\nFile not found\n"
+
+
+void	map_init(char **map, char *file);
+char	**clean_tab(char **file);
 
 #endif

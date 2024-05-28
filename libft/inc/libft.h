@@ -6,13 +6,14 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 09:18:10 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/05/20 19:15:34 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/05/28 19:01:55 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "get_next_line.h"
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
@@ -53,6 +54,7 @@ char	*ft_strjoinwsep(int size, char **strs, char *sep);
 char	*ft_strtrim(char const *s, char const *set);
 char	**ft_split(char const *s, char c);
 int		count_words(char const *s, char c);
+size_t	count_lines(int fd);
 char	*ft_itoa(int n);
 size_t	nbsize(long nb);
 void	ft_putchar_fd(char c, int fd);

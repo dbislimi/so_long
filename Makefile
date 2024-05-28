@@ -1,6 +1,6 @@
 LIBFT = ./libft
 
-SRCS = main.c
+SRCS = main.c map_init.c map_init_utils.c
 OBJS = ${SRCS:.c=.o}
 
 NAME = so_long
