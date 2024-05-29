@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_tab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/25 14:54:50 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/05/29 14:45:38 by dbislimi         ###   ########.fr       */
+/*   Created: 2024/05/29 13:12:28 by dbislimi          #+#    #+#             */
+/*   Updated: 2024/05/29 13:12:39 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+void	free_tab(char **tab)
 {
-	char	**map;
+	size_t	i;
 
-	map = NULL;
-	if (ac == 1)
-		ft_exit(MISSING_FILE);
-	map = map_init(av[1]);
-	if (!map)
-		return (1);
-	print_tab(map);
-	free_tab(map);
+	i = 0;
+	while (tab[i])
+		free(tab[i++]);
+	free(tab);
 }

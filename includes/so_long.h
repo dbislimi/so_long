@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 14:55:12 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/05/28 19:13:54 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/05/29 14:45:23 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@
 # define NOT_FOUND "Error\nFile not found\n"
 
 
-void	map_init(char **map, char *file);
-char	**clean_tab(char **file);
+char	**map_init(char *file);
+char	*ft_strdupforsl(const char *s);
+void	ft_exit(char *msg);
+void	print_tab(char **tab);
+int		check_filename(char	*file);
 
 #endif

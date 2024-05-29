@@ -1,5 +1,6 @@
 LIBFT_PATH = ./libft
-LIBFT_SRCS = ${addprefix ${LIBFT_PATH}/, count_lines.c \
+LIBFT_SRCS = ${addprefix ${LIBFT_PATH}/, free_tab.c \
+			count_lines.c \
 			count_words.c \
 			ft_atoi.c \
 			ft_atol.c \

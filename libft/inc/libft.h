@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 09:18:10 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/05/28 19:01:55 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/05/29 13:12:52 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ char	*ft_strjoinwsep(int size, char **strs, char *sep);
 char	*ft_strtrim(char const *s, char const *set);
 char	**ft_split(char const *s, char c);
 int		count_words(char const *s, char c);
+void	free_tab(char **tab);
 size_t	count_lines(int fd);
 char	*ft_itoa(int n);
 size_t	nbsize(long nb);
