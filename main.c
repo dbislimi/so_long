@@ -6,11 +6,16 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 14:54:50 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/05/30 19:41:12 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/05/30 20:23:08 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	load_textures(t_data *data)
+{
+	data->texture[0] = get_image()
+}
 
 static void	data_init(t_data *data, char *filename)
 {
@@ -34,6 +39,7 @@ static void	data_init(t_data *data, char *filename)
 			data->map_data->width * 100, "so_long");
 	if (!data->win_ptr)
 		ft_free(data, MALLOC);
+	load_textures(data);
 }
 
 int	main(int ac, char **av)
