@@ -6,14 +6,13 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 09:18:10 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/05/29 13:12:52 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:12:01 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include "get_next_line.h"
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>

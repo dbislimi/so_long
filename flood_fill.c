@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   flood_fill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 12:22:28 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/05/30 16:11:49 by dbislimi         ###   ########.fr       */
+/*   Created: 2024/05/29 16:33:34 by dbislimi          #+#    #+#             */
+/*   Updated: 2024/05/30 15:44:15 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "so_long.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include <limits.h>
+void	flood_fill(int i, int j, char **map)
+{
+	int	n;
+	int	m;
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1000
-# endif
-
-char	*get_next_line(int fd);
-char	*ft_strdup(const char *src);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strjoin(char const *s1, char const *s2);
-size_t	ft_strlen(const char *str);
-
-#endif
+	n = -1;
+	while (map[++n])
+		;
+	m = ft_strlen(map[0]);
+	if (i < 0 || i >= n || j < 0 || j >= m || ft_strchr("1F", map[i][j]))
+		return ;
+	else
+	{
+		map[i][j] = 'F';
+		flood_fill(i + 1, j, map);
+		flood_fill(i - 1, j, map);
+		flood_fill(i, j + 1, map);
+		flood_fill(i, j - 1, map);
+	}
+}

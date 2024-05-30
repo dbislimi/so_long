@@ -1,12 +1,13 @@
 LIBFT = ./libft
 
-SRCS = main.c map_init.c so_long_utils.c
+SRCS = main.c map_init.c so_long_utils.c map_init_utils.c map_init_utils2.c flood_fill.c \
+		free.c events.c
 OBJS = ${SRCS:.c=.o}
 
 NAME = so_long
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror -g3 
 RM = rm -rf
 INCLUDES = -Iincludes -I/usr/include -Imlx
 MLX_FLAGS = -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11

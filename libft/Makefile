@@ -1,6 +1,5 @@
 LIBFT_PATH = ./libft
 LIBFT_SRCS = ${addprefix ${LIBFT_PATH}/, free_tab.c \
-			count_lines.c \
 			count_words.c \
 			ft_atoi.c \
 			ft_atol.c \
@@ -69,7 +68,7 @@ RM = rm -rf
 INCLUDE = ./inc
 
 %.o:%.c ${INCLUDE}    
-	@${CC} ${CFLAGS} -I ${INCLUDE} -c $< -o ${<:.c=.o}
+	@${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I ${INCLUDE}
 
 all : ${NAME}
 
