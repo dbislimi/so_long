@@ -6,40 +6,46 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 14:54:50 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/05/30 20:23:08 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/05/31 20:38:07 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	load_textures(t_data *data)
-{
-	data->texture[0] = get_image()
-}
-
 static void	data_init(t_data *data, char *filename)
 {
-	data->map_data = malloc(sizeof(t_map));
-	data->map_data->map = NULL;
+	data->map_data.map = NULL;
 	data->mlx_ptr = NULL;
 	data->win_ptr = NULL;
 	map_init(filename, data);
-	if (data->map_data->map == NULL)
+	if (data->map_data.map == NULL)
 		ft_free(data, MALLOC);
 	data->mlx_ptr = mlx_init();
 	if (!data->mlx_ptr)
 		ft_free(data, MALLOC);
-	data->map_data->length = -1;
-	data->map_data->width = -1;
-	while (data->map_data->map[0][++data->map_data->length])
+	data->map_data.length = -1;
+	data->map_data.width = -1;
+	while (data->map_data.map[0][++data->map_data.length])
 		;
-	while (data->map_data->map[++data->map_data->width])
+	while (data->map_data.map[++data->map_data.width])
 		;
-	data->win_ptr = mlx_new_window(data->mlx_ptr, data->map_data->length * 100,
-			data->map_data->width * 100, "so_long");
+	data->win_ptr = mlx_new_window(data->mlx_ptr,
+			data->map_data.length * 32,
+			data->map_data.width * 32, "so_long");
 	if (!data->win_ptr)
 		ft_free(data, MALLOC);
 	load_textures(data);
+	rendering(data);
+}
+
+void	free_voidtab(void **tab, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+		free(tab[i++]);
+	free(tab);
 }
 
 int	main(int ac, char **av)

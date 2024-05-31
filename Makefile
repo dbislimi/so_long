@@ -1,7 +1,7 @@
 LIBFT = ./libft
 
-SRCS = main.c map_init.c so_long_utils.c map_init_utils.c map_init_utils2.c flood_fill.c \
-		free.c events.c
+SRCS = main.c parsing.c so_long_utils.c parsing_utils.c parsing_utils2.c flood_fill.c \
+		free.c events.c textures.c
 OBJS = ${SRCS:.c=.o}
 
 NAME = so_long

@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_tab.c                                         :+:      :+:    :+:   */
+/*   map_init_utils2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/29 13:12:28 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/05/31 18:44:44 by dbislimi         ###   ########.fr       */
+/*   Created: 2024/05/30 16:41:56 by dbislimi          #+#    #+#             */
+/*   Updated: 2024/05/30 16:42:57 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "so_long.h"
 
-void	free_tab(char **tab)
+size_t	count_lines(int fd)
 {
-	size_t	i;
+	size_t	res;
+	char	*line;
 
-	i = 0;
-	while (tab[i])
-		free(tab[i++]);
-	free(tab);
+	res = 0;
+	line = get_next_line(fd);
+	while (line)
+	{
+		++res;
+		free(line);
+		line = get_next_line(fd);
+	}
+	return (res);
 }
