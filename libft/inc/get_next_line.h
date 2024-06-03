@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 12:22:28 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/05/30 16:11:49 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/03 15:57:00 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <limits.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1000
+#  define BUFFER_SIZE 10000
 # endif
 
 char	*get_next_line(int fd);

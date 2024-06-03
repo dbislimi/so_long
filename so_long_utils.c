@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 18:53:22 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/05/30 18:45:01 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:06:39 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ char	**map_dup(char **map)
 	return (dup);
 }
 
-t_coordinates	search_char(char c, char **tab)
+t_coo	search_char(char c, char **tab)
 {
-	t_coordinates	co;
+	t_coo	co;
 
 	co.y = -1;
 	while (tab[++co.y])

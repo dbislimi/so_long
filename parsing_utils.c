@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_init_utils.c                                   :+:      :+:    :+:   */
+/*   parsing_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 14:59:27 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/05/30 18:58:25 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:08:01 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	check_filename(char	*file)
 
 	i = ft_strlen(file);
 	if (ft_strcmp(file + i - 4, ".ber"))
-		return (-1);
+		return (-2);
 	return (open(file, O_RDONLY));
 }
 
@@ -82,8 +82,8 @@ int	is_closed(char **map)
 
 int	check_for_path(char **map)
 {
-	t_coordinates	co;
-	char			**dup;
+	t_coo	co;
+	char	**dup;
 
 	co = search_char('P', map);
 	dup = map_dup(map);

@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 18:51:28 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/05/31 20:11:08 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:08:55 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,10 @@ static char	**file_to_tab(char *file, size_t nb_of_lines)
 
 static int	check_validity(char **map)
 {
-	if (count_char('E', map) != 1 || count_char('C', map) < 1
-		|| count_char('P', map) != 1)
+	int	c;
+
+	c = count_char('C', map);
+	if (count_char('E', map) != 1 || count_char('P', map) != 1)
 		return (0);
 	if (!is_rectangle(map))
 		return (0);
@@ -80,18 +82,20 @@ static int	check_validity(char **map)
 		return (0);
 	if (!check_for_path(map))
 		return (0);
-	return (1);
+	return (c);
 }
 
 void	map_init(char *file, t_data *data)
 {
 	size_t	nb_of_lines;
-	int				i;
-	int				fd;
-	
+	int		i;
+	int		fd;
+
 	i = 0;
 	fd = check_filename(file);
-	if (fd < 0)
+	if (fd == -2)
+		ft_free(data, BAD_EXTENSION);
+	if (fd == -1)
 		ft_free(data, NOT_FOUND);
 	nb_of_lines = count_lines(fd);
 	close(fd);
@@ -100,6 +104,7 @@ void	map_init(char *file, t_data *data)
 	data->map_data.map = file_to_tab(file, nb_of_lines);
 	if (data->map_data.map == NULL)
 		return ;
-	if (!check_validity(data->map_data.map))
+	data->map_data.collectables = check_validity(data->map_data.map);
+	if (!data->map_data.collectables)
 		ft_free(data, INVALID_MAP);
 }

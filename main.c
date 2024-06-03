@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 14:54:50 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/05/31 20:38:07 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/03 14:36:08 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	main(int ac, char **av)
 	if (ac == 1)
 		ft_exit(MISSING_FILE);
 	data_init(&data, av[1]);
-	mlx_hook(data.win_ptr, KeyRelease, KeyReleaseMask, &on_keypress, &data);
+	mlx_hook(data.win_ptr, KeyPress, KeyPressMask, &on_keypress, &data);
 	mlx_hook(data.win_ptr, DestroyNotify, StructureNotifyMask, &destroy, &data);
 	mlx_loop(data.mlx_ptr);
 	ft_free(&data, NULL);
