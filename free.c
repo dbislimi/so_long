@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 17:02:30 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/06/03 16:27:21 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/03 19:01:59 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	free_texture(void **tab, t_data *data)
 
 void	ft_free(t_data *data, char *msg)
 {
+	if (data->map_data.save)
+		free_tab(data->map_data.save);
 	if (data->map_data.map)
 		free_tab(data->map_data.map);
 	if (data->texture)

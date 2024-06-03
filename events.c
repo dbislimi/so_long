@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 19:35:09 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/06/03 16:26:53 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/03 19:03:14 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,7 @@ int	on_keypress(int keysym, t_data *data)
 	else if (keysym == RIGHT
 		&& data->map_data.map[player.y][player.x + 1] != '1')
 		move(RIGHT, data, player);
+	else if (keysym == ESC)
+		ft_free(data, NULL);
 	return (0);
 }

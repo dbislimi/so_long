@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 14:54:50 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/06/03 14:36:08 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/03 19:01:24 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static void	data_init(t_data *data, char *filename)
 	data->map_data.map = NULL;
 	data->mlx_ptr = NULL;
 	data->win_ptr = NULL;
+	data->texture = NULL;
 	map_init(filename, data);
 	if (data->map_data.map == NULL)
 		ft_free(data, MALLOC);

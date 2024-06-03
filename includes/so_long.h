@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 14:55:12 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/06/03 17:21:56 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:29:36 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,11 @@
 # define DOWN 115
 # define LEFT 97
 # define RIGHT 100
+# define ESC 65307
 
 typedef struct s_map
 {
+	char	**save;
 	char	**map;
 	int		width;
 	int		length;
