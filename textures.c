@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 16:15:22 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/06/03 19:10:27 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/03 19:29:56 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,5 @@ void	load_textures(t_data *data)
 	data->texture[2] = xpm_to_image(data, PLAYER);
 	data->texture[3] = xpm_to_image(data, COLLECTABLES);
 	data->texture[4] = xpm_to_image(data, EXIT);
-	data->texture[5] = mlx_;
+	data->texture[5] = NULL;
 }
