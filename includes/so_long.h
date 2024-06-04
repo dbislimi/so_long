@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 14:55:12 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/06/03 18:29:36 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/04 18:08:43 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,26 @@
 # define ASSETS "Error\nAssets not found\n"
 # define MALLOC "Error\nMalloc Error\n"
 
-# define FLOOR "./textures/floor.xpm"
-# define WALL "./textures/wall.xpm"
-# define PLAYER "./textures/player.xpm"
-# define COLLECTABLES "./textures/SeedBig2.xpm"
-# define EXIT "./textures/ScrollEmpty.xpm"
+# define FLOORxpm "./textures/FLOOOR.xpm"
+# define WALLxpm "./textures/walll.xpm"
+# define PLAYERxpm "./textures/Knight1_Move.xpm"
+# define COLLECTABLESxpm "./textures/SeedBig2.xpm"
+# define EXITxpm "./textures/ScrollEmpty.xpm"
 
 # define UP 119
 # define DOWN 115
 # define LEFT 97
 # define RIGHT 100
 # define ESC 65307
+
+enum textures
+{
+	FLOOR,
+	WALL,
+	PLAYER,
+	COINS,
+	EXIT
+};
 
 typedef struct s_map
 {
