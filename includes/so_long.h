@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 14:55:12 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/06/04 18:08:43 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/05 20:23:54 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@
 # define ASSETS "Error\nAssets not found\n"
 # define MALLOC "Error\nMalloc Error\n"
 
-# define FLOORxpm "./textures/FLOOOR.xpm"
-# define WALLxpm "./textures/walll.xpm"
-# define PLAYERxpm "./textures/Knight1_Move.xpm"
-# define COLLECTABLESxpm "./textures/SeedBig2.xpm"
+# define FLOORxpm "./textures/light.xpm"
+# define WALLxpm "./textures/rock64.xpm"
+# define PLAYERxpm "./textures/ptit.xpm"
+# define COLLECTABLESxpm "./textures/coin1.xpm"
 # define EXITxpm "./textures/ScrollEmpty.xpm"
 
 # define UP 119

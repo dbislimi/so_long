@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 16:15:22 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/06/04 17:12:43 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/05 19:26:37 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 static void	put_image(t_data *data, int x, int y)
 {
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
-		data->texture[FLOOR], x * 32, y * 32);
+		data->texture[FLOOR], x * 64, y * 64);
 	if (data->map_data.map[y][x] == '1')
 		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
-			data->texture[WALL], x * 32, y * 32);
+			data->texture[WALL], x * 64, y * 64);
 	else if (data->map_data.map[y][x] == 'P')
 		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
-			data->texture[PLAYER], x * 32, y * 32);
+			data->texture[PLAYER], x * 64, y * 64);
 	else if (data->map_data.map[y][x] == 'C')
 		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
-			data->texture[3], x * 32, y * 32);
+			data->texture[COINS], x * 64, y * 64);
 	else if (data->map_data.map[y][x] == 'E')
 		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
-			data->texture[4], x * 32, y * 32);
+			data->texture[4], x * 64, y * 64);
 }
 
 void	rendering(t_data *data)
