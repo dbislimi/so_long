@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 14:54:50 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/06/05 19:26:48 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/06 10:25:22 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ static void	data_init(t_data *data, char *filename)
 		;
 	load_textures(data);
 	data->win_ptr = mlx_new_window(data->mlx_ptr,
-			data->map_data.length * 64,
-			data->map_data.width * 64, "so_long");
+			data->map_data.length * 32,
+			data->map_data.width * 32, "so_long");
 	if (!data->win_ptr)
 		ft_free(data, MALLOC);
 	rendering(data);

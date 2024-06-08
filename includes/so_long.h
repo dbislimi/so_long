@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 14:55:12 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/06/05 20:23:54 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/08 17:12:57 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,14 @@
 # define ASSETS "Error\nAssets not found\n"
 # define MALLOC "Error\nMalloc Error\n"
 
-# define FLOORxpm "./textures/light.xpm"
-# define WALLxpm "./textures/rock64.xpm"
-# define PLAYERxpm "./textures/ptit.xpm"
-# define COLLECTABLESxpm "./textures/coin1.xpm"
-# define EXITxpm "./textures/ScrollEmpty.xpm"
+# define FLOORxpm "./textures/floor32.xpm"
+# define WALLxpm "./textures/wall10.xpm"
+# define ONEXITR "./textures/playeronexitr.xpm"
+# define ONEXITL "./textures/playeronexitl.xpm"
+# define PLAYERRxpm "./textures/playerr.xpm"
+# define PLAYERLxpm "./textures/playerl.xpm"
+# define COLLECTABLESxpm "./textures/coinn.xpm"
+# define EXITxpm "./textures/exit.xpm"
 
 # define UP 119
 # define DOWN 115
@@ -46,8 +49,14 @@ enum textures
 	WALL,
 	PLAYER,
 	COINS,
-	EXIT
+	EXIT,
 };
+
+typedef struct s_coordinates
+{
+	int	x;
+	int	y;
+}	t_coo;
 
 typedef struct s_map
 {
@@ -56,6 +65,7 @@ typedef struct s_map
 	int		width;
 	int		length;
 	int		collectables;
+	t_coo	exit;
 }	t_map;
 
 typedef struct s_data
@@ -66,12 +76,7 @@ typedef struct s_data
 	t_map	map_data;
 }	t_data;
 
-typedef struct s_coordinates
-{
-	int	x;
-	int	y;
-}	t_coo;
-
+void	*xpm_to_image(t_data *data, char *name);
 void			map_init(char *file, t_data *data);
 int				check_for_path(char **map);
 int				is_closed(char **map);
@@ -91,4 +96,8 @@ int				destroy(t_data *data);
 void			load_textures(t_data *data);
 void			rendering(t_data *data);
 
+void	check_texture(int direction, t_coo dest, t_data *data);
+void	change_texture(int texture, char *new_texure, t_data *data);
+void	move(int direction, t_data *data);
+void	update_position(t_coo exit, t_coo current, t_coo new, t_data *data);
 #endif
