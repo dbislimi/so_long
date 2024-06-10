@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 14:55:12 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/06/10 17:10:36 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/10 20:28:49 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,24 @@
 # define ONEXITL "./textures/playeronexitl.xpm"
 # define PLAYERRXPM "./textures/playerr.xpm"
 # define PLAYERLXPM "./textures/playerl.xpm"
-# define COLLECTIBLEXPM "./textures/coinn.xpm"
+# define COLLECTIBLE1XPM "./textures/coin1.xpm"
+# define COLLECTIBLE2XPM "./textures/coin2.xpm"
+# define COLLECTIBLE3XPM "./textures/coin3.xpm"
+# define COLLECTIBLE4XPM "./textures/coin4.xpm"
+# define COLLECTIBLE5XPM "./textures/coin5.xpm"
+# define COLLECTIBLE6XPM "./textures/coin6.xpm"
+# define COLLECTIBLE7XPM "./textures/coin7.xpm"
+# define COLLECTIBLE8XPM "./textures/coin8.xpm"
+# define COLLECTIBLE9XPM "./textures/coin9.xpm"
 # define EXITXPM "./textures/exit.xpm"
 # define EXITOPENXPM "./textures/exitopen.xpm"
+# define EXITOPEN1XPM "./textures/exitOpen1.xpm"
+# define EXITOPEN2XPM "./textures/exitOpen2.xpm"
+# define EXITOPEN3XPM "./textures/exitOpen3.xpm"
+# define EXITOPEN4XPM "./textures/exitOpen4.xpm"
+# define EXITOPEN5XPM "./textures/exitOpen5.xpm"
+# define EXITOPEN6XPM "./textures/exitOpen6.xpm"
+# define EXITOPEN7XPM "./textures/exitOpen7.xpm"
 
 enum e_keys
 {
@@ -52,11 +67,14 @@ enum e_textures
 	FLOOR,
 	WALL,
 	PLAYERR,
-	COINS,
+	COIN1,
+	COIN9 = 11,
 	EXIT,
 	PLAYERL,
 	PLAYERONEXITR,
-	PLAYERONEXITL
+	PLAYERONEXITL,
+	EXITOPEN1,
+	EXITOPEN7 = 22
 };
 
 typedef struct s_coordinates
@@ -105,5 +123,10 @@ void	change_texture(int texture, char *new_texure, t_data *data);
 void	move(int direction, t_data *data);
 void	update_position(int direction, t_coo player, t_coo next, t_data *data);
 void	put_image(t_data *data, int image, int x, int y);
+
+// BONUS
+
+void	update_coins(t_data *data, int image);
+int		sprite(t_data *data);
 
 #endif
