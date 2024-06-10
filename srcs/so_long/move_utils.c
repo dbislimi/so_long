@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 15:44:40 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/06/10 16:53:52 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/10 17:10:07 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	update_position(int direction, t_coo player, t_coo next, t_data *data)
 		data->map_data.map[next.y][next.x] = '0';
 	}
 	if (data->map_data.collectibles == 0)
-		change_texture(EXIT, EXITOPENxpm, data);
+		change_texture(EXIT, EXITOPENXPM, data);
 	if (data->map_data.map[player.y][player.x] == 'E')
 		put_image(data, EXIT, player.x, player.y);
 	else

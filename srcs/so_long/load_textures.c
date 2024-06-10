@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 16:15:22 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/06/10 16:53:25 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/10 17:10:54 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,12 @@ void	*xpm_to_image(t_data *data, char *name)
 void	load_textures(t_data *data)
 {
 	data->texture = malloc(sizeof(void *) * 9);
-	data->texture[FLOOR] = xpm_to_image(data, FLOORxpm);
-	data->texture[WALL] = xpm_to_image(data, WALLxpm);
-	data->texture[PLAYERR] = xpm_to_image(data, PLAYERRxpm);
-	data->texture[COINS] = xpm_to_image(data, COLLECTIBLExpm);
-	data->texture[EXIT] = xpm_to_image(data, EXITxpm);
-	data->texture[PLAYERL] = xpm_to_image(data, PLAYERLxpm);
+	data->texture[FLOOR] = xpm_to_image(data, FLOORXPM);
+	data->texture[WALL] = xpm_to_image(data, WALLXPM);
+	data->texture[PLAYERR] = xpm_to_image(data, PLAYERRXPM);
+	data->texture[COINS] = xpm_to_image(data, COLLECTIBLEXPM);
+	data->texture[EXIT] = xpm_to_image(data, EXITXPM);
+	data->texture[PLAYERL] = xpm_to_image(data, PLAYERLXPM);
 	data->texture[PLAYERONEXITR] = xpm_to_image(data, ONEXITR);
 	data->texture[PLAYERONEXITL] = xpm_to_image(data, ONEXITL);
 	data->texture[8] = NULL;
