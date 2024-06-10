@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 14:55:12 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/06/08 17:12:57 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/10 16:53:52 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,22 +34,29 @@
 # define ONEXITL "./textures/playeronexitl.xpm"
 # define PLAYERRxpm "./textures/playerr.xpm"
 # define PLAYERLxpm "./textures/playerl.xpm"
-# define COLLECTABLESxpm "./textures/coinn.xpm"
+# define COLLECTIBLExpm "./textures/coinn.xpm"
 # define EXITxpm "./textures/exit.xpm"
+# define EXITOPENxpm "./textures/exitopen.xpm"
 
-# define UP 119
-# define DOWN 115
-# define LEFT 97
-# define RIGHT 100
-# define ESC 65307
+enum keys
+{
+	UP = 119,
+	DOWN = 115,
+	LEFT = 97,
+	RIGHT = 100,
+	ESC = 65307
+};
 
 enum textures
 {
 	FLOOR,
 	WALL,
-	PLAYER,
+	PLAYERR,
 	COINS,
 	EXIT,
+	PLAYERL,
+	PLAYERONEXITR,
+	PLAYERONEXITL
 };
 
 typedef struct s_coordinates
@@ -60,12 +67,12 @@ typedef struct s_coordinates
 
 typedef struct s_map
 {
-	char	**save;
 	char	**map;
 	int		width;
 	int		length;
-	int		collectables;
+	int		collectibles;
 	t_coo	exit;
+	t_coo	player;
 }	t_map;
 
 typedef struct s_data
@@ -76,7 +83,7 @@ typedef struct s_data
 	t_map	map_data;
 }	t_data;
 
-void	*xpm_to_image(t_data *data, char *name);
+void			*xpm_to_image(t_data *data, char *name);
 void			map_init(char *file, t_data *data);
 int				check_for_path(char **map);
 int				is_closed(char **map);
@@ -96,8 +103,9 @@ int				destroy(t_data *data);
 void			load_textures(t_data *data);
 void			rendering(t_data *data);
 
-void	check_texture(int direction, t_coo dest, t_data *data);
-void	change_texture(int texture, char *new_texure, t_data *data);
-void	move(int direction, t_data *data);
-void	update_position(t_coo exit, t_coo current, t_coo new, t_data *data);
+void			change_texture(int texture, char *new_texure, t_data *data);
+void			move(int direction, t_data *data);
+void			update_position(int direction, t_coo player, t_coo next, t_data *data);
+void			put_image(t_data *data, int image, int x, int y);
+
 #endif

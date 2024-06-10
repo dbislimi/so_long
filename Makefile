@@ -1,13 +1,13 @@
 LIBFT = ./libft
-
-SRCS = main.c parsing.c so_long_utils.c parsing_utils.c parsing_utils2.c flood_fill.c \
-		free.c events.c load_textures.c manage_textures.c move.c move_utils.c
+SL_PATH = ./srcs/so_long
+SRCS = ${addprefix ${SL_PATH}/,main.c parsing.c so_long_utils.c parsing_utils.c parsing_utils2.c flood_fill.c \
+		free.c events.c load_textures.c manage_textures.c move.c move_utils.c}
 OBJS = ${SRCS:.c=.o}
 
 NAME = so_long
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3 
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 INCLUDES = -Iincludes -I/usr/include -Imlx
 MLX_FLAGS = -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11
@@ -16,9 +16,8 @@ all : ${NAME}
 
 
 ${NAME} : ${OBJS}
-	@${MAKE} --silent -C ${LIBFT}
-	@${CC} ${CFLAGS} -o ${NAME} ${OBJS} ${LIBFT}/libft.a ${MLX_FLAGS}
-	@printf "MAKEFILE COMPILE\n"
+	${MAKE} --silent -C ${LIBFT}
+	${CC} ${CFLAGS} -o ${NAME} ${OBJS} ${LIBFT}/libft.a ${MLX_FLAGS}
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $< $(INCLUDES)
