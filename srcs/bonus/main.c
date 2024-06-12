@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 14:54:50 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/06/10 20:24:17 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/11 12:52:44 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(int ac, char **av)
 		ft_free(&data, MALLOC);
 	load_textures(&data);
 	rendering(&data);
-	mlx_hook(data.win_ptr, KeyRelease, KeyReleaseMask, &on_keypress, &data);
+	mlx_hook(data.win_ptr, KeyPress, KeyPressMask, &on_keypress, &data);
 	mlx_hook(data.win_ptr, DestroyNotify, StructureNotifyMask, &destroy, &data);
 	mlx_loop_hook(data.mlx_ptr, sprite, &data);
 	mlx_loop(data.mlx_ptr);

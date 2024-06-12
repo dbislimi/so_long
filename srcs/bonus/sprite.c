@@ -6,7 +6,7 @@
 /*   By: dbislimi <dbislimi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 19:44:37 by dbislimi          #+#    #+#             */
-/*   Updated: 2024/06/10 19:45:03 by dbislimi         ###   ########.fr       */
+/*   Updated: 2024/06/11 14:44:31 by dbislimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,25 @@ void	update_coins(t_data *data, int image)
 
 int	sprite(t_data *data)
 {
+	static int	refresh_rate;
+	static int	timer;
 	static int	i;
 	static int	j;
 
-	usleep(90000);
+	refresh_rate = 3000;
+	if (timer != refresh_rate)
+		return (++timer);
+	else
+		timer = 0;
 	if (j == 0 || j == COIN9)
 		j = COIN1;
 	update_coins(data, j);
 	++j;
 	if (data->map_data.collectibles != 0)
-		return (0);
+		return (1);
 	if (i == 0 || i == EXITOPEN7)
 		i = EXITOPEN1;
 	put_image(data, i, data->map_data.exit.x, data->map_data.exit.y);
 	++i;
-	return (1);
+	return (0);
 }
